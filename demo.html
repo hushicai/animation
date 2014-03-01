@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Test</title>
+    </head>
+    <body>
+        <button id="test" style="position: relative;">test</button>
+        <script src="./Animation.js"></script>
+        <script>
+            var animation = new Animation(
+                document.getElementById('test')
+            );
+            animation.animate({
+                width: 200,
+                height: 300
+            })
+            .animate({
+                left: 300
+            })
+            .animate({
+                fontSize: 30
+            })
+            .animate({
+                opacity: 0.5 
+            })
+            .animate({
+                left: 100
+            });
+        </script>
+    </body>
+</html>
