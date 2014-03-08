@@ -74,7 +74,7 @@
      * @const
      * @type {number}
      */
-    var interval = 16;
+    var interval = 13;
 
     /**
      * 定时器标志
@@ -316,6 +316,25 @@
 
             // 入列
             this.queue.enqueue(doAnimation);
+
+            return this;
+        },
+        /**
+         * 等待
+         *
+         * @public
+         * @param {number} ms 毫秒
+         */
+        wait: function(ms) {
+            var animation = this;
+            var next = function() {
+                animation.queue.dequeue();
+            }
+            var doWait = function() {
+                setTimeout(next, ms);
+            }
+
+            this.queue.enqueue(doWait);
 
             return this;
         }
