@@ -8,3 +8,23 @@ animation
 * ...
 
 看了一遍jQuery源码后即兴之作，莫吐槽！
+
+用法：
+
+```javascript
+new Animation(
+    document.getElementById('test')
+)
+.animate({ 
+    width: 200,
+    height: 300
+})
+.wait(5000) // 等待5s
+.animate({
+    fontSize: 30
+})
+.wait(5000) // 等待5s
+.animate({
+    opacity: 0.5
+});
+```
